@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>League of Legends - Manipulating the DOM</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HTML Follows BEM naming conventions 
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list">
+
+
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <header class="main__hero">
+      <h1>League of Legends Champions</h1>
+    </header>
+    <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+    <section id="section1" data-nav="Section 1" class="your-active-class">
+      <div class="landing__container">
+        <div class="landing_intro">
+          <h2>ORNN</h2>
+          <p>Ornn is the Freljordian spirit of forging and craftsmanship. He works in the solitude of a massive smithy, hammered out from the lava caverns beneath the volcano Hearth-Home. There he stokes bubbling cauldrons of molten rock to purify ores and fashion items of unsurpassed quality. When other deities—especially Volibear—walk the earth and meddle in mortal affairs, Ornn arises to put these impetuous beings back in their place, either with his trusty hammer or the fiery power of the mountains themselves.</p>
+        </div>
+        <div class="landing_img">
+          
+        </div>
+        <!-- <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p> -->
+      </div>
+    </section>
+    <section id="section2" data-nav="Section 2">
+      <div class="landing__container">
+        <div class="landing_img">
+          
+        </div>     
+        <div class="landing_intro">
+          <h2>MAOKAI</h2>
+          <p>Maokai is a rageful, towering treant who fights the unnatural horrors of the Shadow Isles. He was twisted into a force of vengeance after a magical cataclysm destroyed his home, surviving undeath only through the Waters of Life infused within his heartwood. Once a peaceful nature spirit, Maokai now furiously battles to banish the scourge of unlife from the Shadow Isles and restore his home to its former beauty.</p>
+        </div>   
+      </div>
+    </section>
+    <section id="section3" data-nav="Section 3">
+      <div class="landing__container">
+        <div class="landing_intro">
+          <h2>SHEN</h2>
+          <p>Among the secretive, Ionian warriors known as the Kinkou, Shen serves as their leader, the Eye of Twilight. He longs to remain free from the confusion of emotion, prejudice, and ego, and walks the unseen path of dispassionate judgment between the spirit realm and the physical world. Tasked with enforcing the equilibrium between them, Shen wields blades of steel and arcane energy against any who would threaten it.</p>
+        </div>
+        <div class="landing_img">
+          
+        </div>
+        <!-- <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p> -->
+      </div>
+    </section>
+    <a href="#" class="goToTopButton">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+  </main>
+  <footer class="page__footer">
+    <p>© 2020 Riot Games, Inc.  League of Legends and all related logos, characters, names and distinctive likenesses thereof are exclusive property of Riot Games, Inc.  All Rights Reserved.</p>
+  </footer>
+  <script src="https://kit.fontawesome.com/f162883cf6.js" crossorigin="anonymous"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
