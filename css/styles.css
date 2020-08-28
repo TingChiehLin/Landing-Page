@@ -90,15 +90,20 @@ section {
     margin-right: 5rem;
 }
 
+.navbar__menu li {
+    display: inline-block;
+}
+
+.navbar__menu li a:hover {
+    background-color: orange;
+}
+
 .navitem_style {
     list-style-type: none;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-.navbar__menu li {
-    display: inline-block;
-}
 
 .navbar__menu .menu__link {
     display: block;
@@ -124,6 +129,10 @@ section {
     transform: translateY(0%);
 }
 
+.inverse {
+    color: rgb(0, 117, 133);
+}
+
 .goToTopButton {
    background: white;
    position: fixed;
@@ -147,6 +156,10 @@ section {
     bottom: 32px;
     pointer-events: auto;
     opacity: 1;    
+}
+
+.activeNav {    
+    color: rgb(255, 72, 0);
 }
 
 /*
@@ -187,8 +200,12 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 2rem;
 }
 
+.landing_intro p {
+    text-align: left;
+}
 
 @media only screen and (min-width: 35em){
     /* .landing__container {

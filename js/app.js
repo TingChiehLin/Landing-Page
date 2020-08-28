@@ -25,12 +25,16 @@
 const navbar__menu = document.querySelector('.navbar__menu');
 const navbar__list = document.getElementById('navbar__list');
 const landing_img = document.querySelectorAll('.landing_img');
+const sections = document.querySelectorAll('section');
 const section1 = document.getElementById('section1');
 const section2 = document.getElementById('section2');
 const section3 = document.getElementById('section3');
+const championTitle = document.querySelectorAll('.champion-title');
 const fragment = document.createDocumentFragment();
 const main = document.getElementById('main');
 const goToTopButton = document.querySelector('.goToTopButton');
+
+const activeNav = 'navbar__list li:hover { color: rgb(255, 72, 0); }';
 
 let lastScrollTop = 0;
 
@@ -47,8 +51,8 @@ let lastScrollTop = 0;
  * 
 */
 
-const nav_list_item = ['ORNN','MAOKAI','SHEN'];
-const images = ['./img/Ornn.jpg','./img/Maokai.jpg','./img/Shen.jpg'];
+const nav_list_item = ['ORNN','MAOKAI','SHEN','Poppy'];
+const images = ['./img/Ornn.jpg','./img/Maokai.jpg','./img/Shen.jpg','./img/Poppy.jpg'];
 
 initNav();
 initImg();
@@ -56,7 +60,6 @@ initSectionEvent();
 
 // build the nav
 function initNav() {
-
     // nav_list_item.forEach(function(nav_item) {
     for (let index = 0; index < nav_list_item.length; index++) {
         const li = document.createElement('li');
@@ -65,6 +68,7 @@ function initNav() {
         alink.textContent = nav_list_item[index];
         alink.style.textDecoration = 'none';
         alink.style.color = 'white';
+        // alink.style.
         li.classList.add('navitem_style');
         li.appendChild(alink);
         fragment.appendChild(li);
@@ -83,18 +87,12 @@ function initImg() {
 }
 
 function initSectionEvent() {
-    section1.addEventListener('click',function() {
-        smoothScroll('section1', 1000);
-    });
-    section2.addEventListener('click',function() {
-        smoothScroll('section2', 1000);
-    });
-    section3.addEventListener('click',function() {
-        smoothScroll('section3', 1000);
-    });
+    sections.forEach(element => 
+        element.addEventListener('click',function() {
+            smoothScroll(element.dataset, 1000);
+        })
+    ); 
 }
-
-// Add class 'active' to section when near top of viewport
 
 // Scroll to anchor ID using scrollTO event
 
@@ -103,8 +101,6 @@ function initSectionEvent() {
  * Begin Events
  * 
 */
-
-smoothScroll('section1',1000);
 
 window.addEventListener("scroll", function(){
 
@@ -124,6 +120,27 @@ window.addEventListener("scroll", function(){
 });
 
 // Scroll to section on link click
+// Add class 'active' to section when near top of viewport
+
+
+const options = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-192px",
+};
+
+function obCallback(entries, observer) {
+   entries.forEach(entry => {
+       entry.target.classList.toggle('inverse');
+       observer.unobserve(entry.target);
+   });
+}
+
+const observer = new IntersectionObserver(obCallback, options);
+
+championTitle.forEach(championTitle => {
+    observer.observe(championTitle);
+});
 
 function smoothScroll(target,duration) {
     const sectiontarget = document.getElementById(target);
@@ -150,8 +167,6 @@ function smoothScroll(target,duration) {
     }
     requestAnimationFrame(animation);
 }
-
-smoothScroll('section3',1000);
 
 /*
     Delay load until all of conetent are loaded ???
