@@ -109,7 +109,7 @@ window.addEventListener("scroll", function(){
         // navbar__menu.style.top = "-80";
         navbar__menu.classList.add('hide');
         navbar__menu.classList.remove('show');
-        goToTopButton.classList.add("active");
+        goToTopButton.classList.add("active"); 
     } else {
         // navbar__menu.style.top = "0";
         navbar__menu.classList.remove('hide');
@@ -117,6 +117,7 @@ window.addEventListener("scroll", function(){
         goToTopButton.classList.remove("active");
     }
     lastScrollTop = scrollTop;
+    setActiveClass();
 });
 
 // Scroll to section on link click
@@ -169,7 +170,27 @@ function smoothScroll(target,duration) {
 }
 
 /*
-    Delay load until all of conetent are loaded ???
+    getBoundingClientRect
 */
+
+function isInViewport(element) {
+    const bounding = element.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function setActiveClass(){
+    for (let i=0; i < sections.length; i++){
+        if (isInViewport(sections[i])){
+            sections[i].classList.add("your-active-class");
+        }else{
+            sections[i].classList.remove("your-active-class");
+        }
+    }
+}
 
 // document.addEventListener('DOMContentLoaded', init);

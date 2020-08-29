@@ -38,6 +38,7 @@ h1 {
     }
 }
 
+
 h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
@@ -77,6 +78,7 @@ section {
     top: 0;
     width: 100%;
     z-index: 5;
+    
 }
 
 .navbar__menu ul {
@@ -208,10 +210,7 @@ section {
 }
 
 @media only screen and (min-width: 35em){
-    /* .landing__container {
-        max-width: 50em;
-        padding: 4em;
-    } */
+   
 }
 
 section:nth-of-type(even) .landing__container {
@@ -289,6 +288,11 @@ section.your-active-class {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+.your-active-class {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
 section.your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
@@ -311,4 +315,32 @@ section.your-active-class .landing__container::after {
 		           translate(-1em) 
 		           rotate(-360deg);
 	}
+}
+
+@media (max-width: 40rem) {
+    h1 {
+        font-size: 5em;
+        margin: 2em 4rem 1em;
+    }
+
+    .main__hero h1{
+        font-size: 2rem;
+    }
+
+    .navbar__menu ul {
+        margin-right: 3rem;
+        justify-content: center;
+    }
+
+    .navitem_style {
+        font-size: 1rem;
+    }
+
+    .landing__container {
+       flex-direction: column;
+    }
+
+    .image_style_item {
+        width: 25rem;
+    }
 }
