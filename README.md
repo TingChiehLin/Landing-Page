@@ -17,3 +17,7 @@ To get started, you open index.html from github repo or download files.
 * [Riot](https://www.riotgames.com/)
 * [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q)
 * [Kevin Powell](https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw)
+
+# Deploying
+
+[Vercel](https://landing-page-sand-zeta.vercel.app)
